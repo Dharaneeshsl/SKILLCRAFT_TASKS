@@ -4,7 +4,7 @@ I0000 00:00:1785760178.033480  163012 cpu_feature_guard.cc:227] This TensorFlow 
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 I0000 00:00:1785760180.448471  163012 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/keras/src/layers/convolutional/base_conv.py:113: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+/path/to/python/lib/python3.12/site-packages/keras/src/layers/convolutional/base_conv.py:113: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
   super().__init__(activity_regularizer=activity_regularizer, **kwargs)
 E0000 00:00:1785760185.757649  163012 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
 Starting gesture recognition model training...

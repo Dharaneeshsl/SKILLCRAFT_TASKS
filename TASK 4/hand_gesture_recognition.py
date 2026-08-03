@@ -12,9 +12,9 @@ img_size = (64, 64)
 
 X, y = [], []
 
-if not os.path.exists(data_dir):
+if not os.path.isdir(data_dir):
     print(f"Dataset not found at {data_dir}. Exiting.")
-    sys.exit(0)
+    sys.exit(1)
 
 for subject in os.listdir(data_dir):
     subject_path = os.path.join(data_dir, subject)
