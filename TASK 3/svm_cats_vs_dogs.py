@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
 cat_dir = os.path.join("TASK 3", "PetImages", "Cat")
@@ -40,10 +41,14 @@ y = np.array(y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-clf = SVC(kernel='linear', max_iter=1000)
-clf.fit(X_train, y_train)
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
-y_pred = clf.predict(X_test)
+clf = SVC(kernel='linear', max_iter=1000)
+clf.fit(X_train_scaled, y_train)
+
+y_pred = clf.predict(X_test_scaled)
 acc = accuracy_score(y_test, y_pred)
 print(f"Test accuracy: {acc:.2f}")
 
@@ -60,7 +65,8 @@ for i in range(2):
     for j in range(2):
         plt.text(j, i, cm[i, j], ha='center', va='center', color='red', fontsize=16)
 plt.tight_layout()
-plt.show()
+plt.savefig('TASK 3/confusion_matrix.png')
+plt.close()
 
 # Show a grid of 16 test images with predicted and true labels
 plt.figure(figsize=(10,10))
@@ -72,4 +78,5 @@ for i in range(16):
     plt.title(f"P:{'Dog' if y_pred[idx] else 'Cat'} / T:{'Dog' if y_test[idx] else 'Cat'}")
     plt.axis('off')
 plt.tight_layout()
-plt.show() 
+plt.savefig('TASK 3/predictions_grid.png')
+plt.close()

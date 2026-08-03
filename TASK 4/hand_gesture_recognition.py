@@ -5,11 +5,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
+import sys
 
-data_dir = r"C:\Users\BALA NITHYA SREE S\Desktop\SkillCraft\TASK 4\leapGestRecog"
+data_dir = r"TASK 4/leapGestRecog"
 img_size = (64, 64)
 
 X, y = [], []
+
+if not os.path.exists(data_dir):
+    print(f"Dataset not found at {data_dir}. Exiting.")
+    sys.exit(0)
 
 for subject in os.listdir(data_dir):
     subject_path = os.path.join(data_dir, subject)
@@ -57,4 +62,5 @@ plt.title('Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.colorbar()
-plt.show() 
+plt.savefig('TASK 4/svm_confusion_matrix.png')
+plt.close()

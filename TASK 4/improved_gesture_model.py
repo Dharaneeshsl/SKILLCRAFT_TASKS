@@ -100,11 +100,11 @@ def create_synthetic_data():
                 img[IMG_SIZE//4:3*IMG_SIZE//4, IMG_SIZE//2+10:IMG_SIZE//2+30, :] = 0.9
             elif gesture == 'three':
                 for j in range(3):
-                    x_pos = IMG_SIZE//2 + (j-1)*20
+                    x_pos = int(IMG_SIZE//2 + (j-1)*20)
                     img[IMG_SIZE//4:3*IMG_SIZE//4, x_pos-5:x_pos+5, :] = 0.9
             elif gesture == 'four':
                 for j in range(4):
-                    x_pos = IMG_SIZE//2 + (j-1.5)*15
+                    x_pos = int(IMG_SIZE//2 + (j-1.5)*15)
                     img[IMG_SIZE//4:3*IMG_SIZE//4, x_pos-3:x_pos+3, :] = 0.9
             
             X.append(img)
@@ -142,7 +142,7 @@ def train_model():
     print("Starting gesture recognition model training...")
     
     # Load dataset
-    data_dir = r"C:\Users\BALA NITHYA SREE S\Desktop\SkillCraft\TASK 4"
+    data_dir = r"TASK 4"
     X, y = load_hagrid_dataset(data_dir)
     
     if len(X) == 0:
