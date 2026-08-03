@@ -1,0 +1,8 @@
+pandas
+scikit-learn
+matplotlib
+pillow
+opencv-python-headless
+tensorflow
+mediapipe
+joblib
