@@ -1,0 +1,19 @@
+{
+  "data_source": "deterministic_demo_patterns",
+  "samples": 320,
+  "classes": [
+    "fist",
+    "four",
+    "ok",
+    "one",
+    "palm",
+    "peace",
+    "three",
+    "two"
+  ],
+  "train_samples": 256,
+  "test_samples": 64,
+  "epochs": 3,
+  "test_loss": 2.027963638305664,
+  "test_accuracy": 0.375
+}

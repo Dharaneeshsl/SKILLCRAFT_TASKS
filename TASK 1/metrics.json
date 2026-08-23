@@ -1,0 +1,13 @@
+{
+  "validation_rmse": 53371.56024906055,
+  "validation_r2": 0.6286307301050609,
+  "train_rows": 1460,
+  "test_rows": 1459,
+  "features": [
+    "GrLivArea",
+    "BedroomAbvGr",
+    "FullBath",
+    "HalfBath",
+    "TotalBath"
+  ]
+}

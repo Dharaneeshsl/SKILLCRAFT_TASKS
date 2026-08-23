@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+
+# Local model binaries can be regenerated from the documented datasets.
+TASK 3/*.joblib
+TASK 4/*.h5
+TASK 4/*.keras
+TASK 4/*.joblib

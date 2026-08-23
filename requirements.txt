@@ -1,5 +1,7 @@
 pandas
+numpy
 scikit-learn
+scikit-image
 matplotlib
 pillow
 opencv-python-headless
